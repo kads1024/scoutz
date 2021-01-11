@@ -132,6 +132,8 @@ GameObject:
   - component: {fileID: 178378133}
   - component: {fileID: 178378135}
   - component: {fileID: 178378134}
+  - component: {fileID: 178378136}
+  - component: {fileID: 178378137}
   m_Layer: 5
   m_Name: Cutscene
   m_TagString: Untagged
@@ -194,6 +196,44 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178378132}
   m_CullTransparentMesh: 0
+--- !u!95 &178378136
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178378132}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b98f322492ac6234abf94c455d0c5bde, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &178378137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178378132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6adf7b0402c00bf4287fab5635051f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Settings: {fileID: 0}
+  MusicOn: {fileID: 0}
+  MusicOff: {fileID: 0}
+  SoundOn: {fileID: 0}
+  SoundOff: {fileID: 0}
+  Slot: {fileID: 0}
+  Badges: {fileID: 0}
 --- !u!1 &326773233
 GameObject:
   m_ObjectHideFlags: 0

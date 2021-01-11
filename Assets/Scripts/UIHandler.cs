@@ -88,7 +88,7 @@ public class UIHandler : MonoBehaviour
     public void OnSelectGender(string gender)
     {
         PlayerPrefs.SetString("Gender", gender);
-        OnStart();
+        Cutscene();
     }
     public void OnResetData()
     {
