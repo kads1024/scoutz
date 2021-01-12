@@ -94,6 +94,10 @@ public class UIHandler : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
     }
+    public void OnDialogue(int dialogueNumber)
+    {
+        SceneManager.LoadScene("Dialogue" + dialogueNumber);
+    }
 }
 
 

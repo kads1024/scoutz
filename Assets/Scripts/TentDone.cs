@@ -16,6 +16,6 @@ public class TentDone : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         PlayerPrefs.SetInt("Tent", 1);
-        SceneManager.LoadScene("MainWorld");
+        SceneManager.LoadScene("Dialogue4");
     }
 }

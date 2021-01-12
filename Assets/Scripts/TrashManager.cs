@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TrashManager : MonoBehaviour
 {
@@ -29,6 +30,10 @@ public class TrashManager : MonoBehaviour
     void Update()
     {
         if(collected <= 10) numberobj.overrideSprite = numbers[collected];
-        if (collected >= 10) PlayerPrefs.SetInt("Trash", 1);
+        if (collected >= 10)
+        {
+            PlayerPrefs.SetInt("Trash", 1);
+            SceneManager.LoadScene("Dialogue5");
+        }
     }
 }
