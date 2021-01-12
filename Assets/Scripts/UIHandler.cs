@@ -38,7 +38,6 @@ public class UIHandler : MonoBehaviour
 
     public void OnSettings()
     {
-        Time.timeScale = 0;
         Settings.SetActive(true);
     }
 

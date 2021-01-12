@@ -168,6 +168,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 1640431172022087834, guid: 325c0c5c9bf14a046b485d5f946aea7a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 60095029356049396}
+    - target: {fileID: 1640431172022087834, guid: 325c0c5c9bf14a046b485d5f946aea7a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnOkay
+      objectReference: {fileID: 0}
+    - target: {fileID: 1640431172558131500, guid: 325c0c5c9bf14a046b485d5f946aea7a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 60095029356049396}
+    - target: {fileID: 1640431172815071445, guid: 325c0c5c9bf14a046b485d5f946aea7a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 60095029356049396}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 325c0c5c9bf14a046b485d5f946aea7a, type: 3}
 --- !u!1 &1640431172063847274 stripped

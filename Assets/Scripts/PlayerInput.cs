@@ -36,10 +36,11 @@ public class PlayerInput : MonoBehaviour
         {
             float rotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg + cameraTransform.eulerAngles.y;
             transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, rotation, ref rotationVelocity, rotationSmoothness);
+            float targetSpeed = MovementSpeed * inputDir.magnitude;
+            currentSpeed = targetSpeed;
+            transform.position += (transform.forward * Time.deltaTime * currentSpeed);
         }
-        float targetSpeed = MovementSpeed * inputDir.magnitude;
-        currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, movementSmoothness);
-        transform.Translate(transform.forward * Time.deltaTime * currentSpeed, Space.World);
+        
     }
 
     private void OnCollisionEnter(Collision collision)
