@@ -17,7 +17,7 @@ public class RopeTransition : MonoBehaviour
 
     public void OnNext()
     {
-        if (NextOne == "MainWorld")
+        if (NextOne == "Dialogue3")
         {
             
             PlayerPrefs.SetInt("Rope", 1);

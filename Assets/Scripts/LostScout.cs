@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class LostScout : MonoBehaviour
 {
+    Animator anim;
+
     private void Start ()
     {
+        anim = GetComponent<Animator>();
+        anim.SetTrigger("Die2");    
         if (PlayerPrefs.HasKey("Lost"))
         {
+            
             Destroy(this);
         }
     }
