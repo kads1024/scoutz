@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BadgeManager : MonoBehaviour
@@ -9,10 +10,16 @@ public class BadgeManager : MonoBehaviour
     public Image carpentry;
     public Image cleanup;
     public Image pathfind;
+    public GameObject bMenu;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (!PlayerPrefs.HasKey("FromBadges"))
+        {
+            PlayerPrefs.SetInt("FromBadges", 0);
+        }
+
         if (PlayerPrefs.HasKey("Rope"))
         {
             ropeWork.gameObject.SetActive(true);
@@ -29,7 +36,23 @@ public class BadgeManager : MonoBehaviour
         {
             pathfind.gameObject.SetActive(true);
         }
+
+        if(PlayerPrefs.GetInt("FromBadges") == 1)
+        {
+            bMenu.SetActive(true);
+            PlayerPrefs.SetInt("FromBadges", 0);
+        }
     }
 
+    public void OpenRope()
+    {
+        PlayerPrefs.SetInt("FromBadges", 1);
+        SceneManager.LoadScene("BowlineKnot");
+    }
 
+    public void OpenTent()
+    {
+        PlayerPrefs.SetInt("FromBadges", 1);
+        SceneManager.LoadScene("Tent");
+    }
 }

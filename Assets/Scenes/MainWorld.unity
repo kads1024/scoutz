@@ -1074,8 +1074,8 @@ MonoBehaviour:
   task: {fileID: 649848860}
   trash: {fileID: 70777410}
   lostScout:
-  - {fileID: 2071142741}
   - {fileID: 1364642907}
+  - {fileID: 2071142741}
   LostPos: {x: 32.6, y: 4.2, z: 51.99}
   FoundPos: {x: 10.33812, y: 0.67, z: -2.553611}
 --- !u!1001 &565375595

@@ -29,6 +29,7 @@ public class UIHandler : MonoBehaviour
     public void OnBadges()
     {
         Badges.SetActive(!Badges.activeInHierarchy);
+        if(!Badges.activeInHierarchy) PlayerPrefs.SetInt("FromBadges", 0);
     }
 
     public void OnExit()

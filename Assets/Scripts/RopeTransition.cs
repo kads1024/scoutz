@@ -17,12 +17,23 @@ public class RopeTransition : MonoBehaviour
 
     public void OnNext()
     {
+        Debug.Log(NextOne);
+        Debug.Log(PlayerPrefs.GetInt("FromBadges"));
         if (NextOne == "Dialogue3")
         {
-            
             PlayerPrefs.SetInt("Rope", 1);
+            if (PlayerPrefs.GetInt("FromBadges") == 0)
+            {
+                SceneManager.LoadScene(NextOne);
+            }
+            else if (PlayerPrefs.GetInt("FromBadges") == 1)
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
-        SceneManager.LoadScene(NextOne);
-        
+        else
+        {
+            SceneManager.LoadScene(NextOne);
+        }
     }
 }
