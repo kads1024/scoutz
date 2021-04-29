@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class TrashManager : MonoBehaviour
 {
     public Transform Compass;
-    public Transform Player;
+    public List<Transform> Player;
     public List<GameObject> trashes;
     public int offset;
 
@@ -16,6 +16,12 @@ public class TrashManager : MonoBehaviour
     public Image numberobj;
     public GameObject UI;
 
+    int character;
+    private void Start()
+    {
+        if (PlayerPrefs.GetString("Gender") == "Boy") character = 0;
+        else if (PlayerPrefs.GetString("Gender") == "Girl") character = 1;
+    }
     // Start is called before the first frame update
     void OnEnable()
     {

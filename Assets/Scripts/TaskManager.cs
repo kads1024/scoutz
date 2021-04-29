@@ -7,48 +7,54 @@ public class TaskManager : MonoBehaviour
 {
     public TextMeshProUGUI task;
     public GameObject trash;
-    public GameObject lostScout;
+    public List<GameObject> lostScout;
 
     public Vector3 LostPos;
     public Vector3 FoundPos;
+    int character;
 
+    private void Start()
+    {
+        if (PlayerPrefs.GetString("Gender") == "Boy") character = 0;
+        else if (PlayerPrefs.GetString("Gender") == "Girl") character = 1;
+    }
     // Update is called once per frame
     void Update()
     {
         if(!PlayerPrefs.HasKey("Rope"))
         {
             task.text = "TIE A BOWLINE KNOT";
-            lostScout.transform.position = LostPos;
+            lostScout[character].transform.position = LostPos;
             trash.SetActive(false);
-            lostScout.SetActive(false);
+            lostScout[character].SetActive(false);
         }
         else if (!PlayerPrefs.HasKey("Tent"))
         {
             task.text = "SETUP YOUR TENT";
-            lostScout.transform.position = LostPos;
+            lostScout[character].transform.position = LostPos;
             trash.SetActive(false);
-            lostScout.SetActive(false);
+            lostScout[character].SetActive(false);
         }
         else if (!PlayerPrefs.HasKey("Trash"))
         {
             task.text = "COLLECT TRASH";
-            lostScout.transform.position = LostPos;
+            lostScout[character].transform.position = LostPos;
             trash.SetActive(true);
-            lostScout.SetActive(false);
+            lostScout[character].SetActive(false);
         }
         else if (!PlayerPrefs.HasKey("Lost"))
         {
             task.text = "FIND THE LOST SCOUT AT NORTH-EAST";
-            lostScout.transform.position = LostPos;
+            lostScout[character].transform.position = LostPos;
             trash.SetActive(false);
-            lostScout.SetActive(true);
+            lostScout[character].SetActive(true);
         }
         else
         {
             task.text = "END";
-            lostScout.transform.position = FoundPos;
+            lostScout[character].transform.position = FoundPos;
             trash.SetActive(false);
-            lostScout.SetActive(true);
+            lostScout[character].SetActive(true);
         }
     }
 }

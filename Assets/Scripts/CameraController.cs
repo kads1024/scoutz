@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     public float rotationMax;
 
     public float Sensitivity;
-    public Transform target;
+    public List<Transform> target;
 
     private Vector3 targetRotation;
     private Vector3 rotationVelocity;
@@ -19,6 +19,12 @@ public class CameraController : MonoBehaviour
 
     public FixedTouchField touchField;
 
+    int character;
+    private void Start()
+    {
+        if (PlayerPrefs.GetString("Gender") == "Boy") character = 0;
+        else if (PlayerPrefs.GetString("Gender") == "Girl") character = 1;
+    }
     // Update is called once per frame
     void LateUpdate()
     {
@@ -28,6 +34,6 @@ public class CameraController : MonoBehaviour
 
         targetRotation = Vector3.SmoothDamp(targetRotation, new Vector3(Xaxis, Yaxis), ref rotationVelocity, rotationSmoothness);
         transform.eulerAngles = targetRotation;
-        transform.position = target.position - transform.forward * 2.5f;
+        transform.position = target[character].position - transform.forward * 2.5f;
     }
 }
