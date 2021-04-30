@@ -21,28 +21,14 @@ public class TaskManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!PlayerPrefs.HasKey("Rope"))
-        {
-            task.text = "TIE A BOWLINE KNOT";
-            lostScout[character].transform.position = LostPos;
-            trash.SetActive(false);
-            lostScout[character].SetActive(false);
-        }
-        else if (!PlayerPrefs.HasKey("Tent"))
-        {
-            task.text = "SETUP YOUR TENT";
-            lostScout[character].transform.position = LostPos;
-            trash.SetActive(false);
-            lostScout[character].SetActive(false);
-        }
-        else if (!PlayerPrefs.HasKey("Trash"))
+        if (PlayerPrefs.HasKey("TrashBadge"))
         {
             task.text = "COLLECT TRASH";
             lostScout[character].transform.position = LostPos;
             trash.SetActive(true);
             lostScout[character].SetActive(false);
         }
-        else if (!PlayerPrefs.HasKey("Lost"))
+        else if(PlayerPrefs.HasKey("LostBadge"))
         {
             task.text = "FIND THE LOST SCOUT AT NORTH-EAST";
             lostScout[character].transform.position = LostPos;
@@ -51,10 +37,41 @@ public class TaskManager : MonoBehaviour
         }
         else
         {
-            task.text = "END";
-            lostScout[character].transform.position = FoundPos;
-            trash.SetActive(false);
-            lostScout[character].SetActive(true);
+            if (!PlayerPrefs.HasKey("Rope"))
+            {
+                task.text = "TIE A BOWLINE KNOT";
+                lostScout[character].transform.position = LostPos;
+                trash.SetActive(false);
+                lostScout[character].SetActive(false);
+            }
+            else if (!PlayerPrefs.HasKey("Tent"))
+            {
+                task.text = "SETUP YOUR TENT";
+                lostScout[character].transform.position = LostPos;
+                trash.SetActive(false);
+                lostScout[character].SetActive(false);
+            }
+            else if (!PlayerPrefs.HasKey("Trash"))
+            {
+                task.text = "COLLECT TRASH";
+                lostScout[character].transform.position = LostPos;
+                trash.SetActive(true);
+                lostScout[character].SetActive(false);
+            }
+            else if (!PlayerPrefs.HasKey("Lost"))
+            {
+                task.text = "FIND THE LOST SCOUT AT NORTH-EAST";
+                lostScout[character].transform.position = LostPos;
+                trash.SetActive(false);
+                lostScout[character].SetActive(true);
+            }
+            else
+            {
+                task.text = "END";
+                lostScout[character].transform.position = FoundPos;
+                trash.SetActive(false);
+                lostScout[character].SetActive(true);
+            }
         }
     }
 }

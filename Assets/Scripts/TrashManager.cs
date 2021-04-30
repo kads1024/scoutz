@@ -39,7 +39,12 @@ public class TrashManager : MonoBehaviour
         if (collected >= 10)
         {
             PlayerPrefs.SetInt("Trash", 1);
-            SceneManager.LoadScene("Dialogue5");
+            PlayerPrefs.DeleteKey("TrashBadge");
+            PlayerPrefs.Save();
+            if(PlayerPrefs.GetInt("FromBadges") == 0)
+                SceneManager.LoadScene("Dialogue5");
+            else
+                SceneManager.LoadScene("MainMenu");
         }
     }
 }

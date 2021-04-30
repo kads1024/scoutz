@@ -11,7 +11,7 @@ public class LostScout : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         anim.SetTrigger("Die2");    
-        if (PlayerPrefs.HasKey("Lost"))
+        if (PlayerPrefs.HasKey("Lost") && !PlayerPrefs.HasKey("LostBadge"))
         {
             
             Destroy(this);
@@ -23,8 +23,14 @@ public class LostScout : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             PlayerPrefs.SetInt("Lost", 1);
+            PlayerPrefs.DeleteKey("LostBadge");
+            PlayerPrefs.Save();
+            
             Destroy(this);
-            SceneManager.LoadScene("MainWorld");
+            if (PlayerPrefs.GetInt("FromBadges") == 0)
+                SceneManager.LoadScene("MainWorld");
+            else
+                SceneManager.LoadScene("MainMenu");
         }
     }
 }
