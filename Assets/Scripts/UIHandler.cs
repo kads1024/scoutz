@@ -13,7 +13,7 @@ public class UIHandler : MonoBehaviour
 
     public GameObject Slot;
     public GameObject Badges;
-
+    public GameObject Reset;
     public void OnStart()
     {
         if(PlayerPrefs.HasKey("Gender"))
@@ -92,8 +92,20 @@ public class UIHandler : MonoBehaviour
     }
     public void OnResetData()
     {
-        PlayerPrefs.DeleteAll();
+        Reset.SetActive(true);
     }
+
+    public void OnYesResetData()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void OnNoResetData()
+    {
+        Reset.SetActive(false);
+    }
+
     public void OnDialogue(int dialogueNumber)
     {
         SceneManager.LoadScene("Dialogue" + dialogueNumber);
