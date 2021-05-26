@@ -1063,7 +1063,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 553781466}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1324994419}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: OnYesResetData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &553781466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,7 +1271,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 741286974}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1324994419}
+        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
+        m_MethodName: OnNoResetData
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &741286974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2257,6 +2281,7 @@ MonoBehaviour:
   SoundOff: {fileID: 846785550}
   Slot: {fileID: 0}
   Badges: {fileID: 463134171}
+  Reset: {fileID: 1441065401}
 --- !u!4 &1324994420
 Transform:
   m_ObjectHideFlags: 0
@@ -2690,7 +2715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1441065402
 RectTransform:
   m_ObjectHideFlags: 0
