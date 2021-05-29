@@ -15,6 +15,7 @@ public class BadgeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        BGMManager.Instance.PlayAudio(false);
         if(PlayerPrefs.HasKey("TrashBadge"))
         {
             PlayerPrefs.DeleteKey("TrashBadge");

@@ -13,7 +13,7 @@ public class TrashPickup : MonoBehaviour
             tm.collected++;
             tm.trashes.Remove(gameObject);
             Destroy(gameObject);
-            
+            PSFXManager.Instance.PlayPickup();
         }
     }
 }

@@ -17,6 +17,9 @@ public class TaskManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Gender") == "Boy") character = 0;
         else if (PlayerPrefs.GetString("Gender") == "Girl") character = 1;
+
+
+        
     }
     // Update is called once per frame
     void Update()
